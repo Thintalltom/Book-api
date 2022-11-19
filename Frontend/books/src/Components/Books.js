@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import {Container, Box, AppBar, Toolbar, Typography, Tooltip, IconButton, Avatar} from '@mui/material'
-import {red} from '@mui/material/colors'
+import { Button } from '@mui/material'
+import {Container, Navbar, Nav} from 'react-bootstrap'
 import axios from 'axios'
+import { BsFillBookFill } from "react-icons/bs";
+import './book.css'
 const Books = () => {
 const [bookData, setBookdata] = useState([{}])
 
@@ -10,41 +12,28 @@ const [bookData, setBookdata] = useState([{}])
      
   }, [])
   
-
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
   return (
+    
+   <Container fluid>
     <>
-    <Container maxWidth="sm"  sx={{ bgcolor: '#cfe8fc', height: '100vh' }}>
-    {bookData.map((books, id) =>  (
-      <div  key={books.id}>
-      <h1>{books.title}</h1>
-      <h1>{books.Author}</h1>
-      </div>
-    ))}
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">Book<span className='text-danger'>R</span></Navbar.Brand>
+          <Nav className="mx-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link>helllo</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+     
+    </>
 
- 
-    </Container>
-        <Box sx={{bgcolor: red[50], height: '100vh'}}>
-        <h1>hekko</h1>
-            </Box>
-     </>
+   </Container>
+    
   )
 }
 

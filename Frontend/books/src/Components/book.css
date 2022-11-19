@@ -1,0 +1,13 @@
+.sidebar
+{
+    width: 150px !important;
+    background-color: rgba(0, 0, 255, 0.158) !important; 
+}
+.sidebar ul li 
+{
+    list-style-type: none !important;
+}
+.sidebar ul li a:hover {
+color:red !important;
+cursor: pointer !important;
+}
