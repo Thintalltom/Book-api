@@ -1,9 +1,24 @@
 const express = require('express')
 const router = express.Router()
 const genres = require('../Genre')
+const multer = require('multer')
+const path = require('path')
+
+// creating unique ame for each file
+const storage = multer.diskStorage({
+    destination: './upload/images',
+    filename: (req, file, cb) => {
+        return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+    }
+})
+//function for upload image
+const upload = multer({
+    storage:storage
+})
 
 
-router.get('/',  (req, res) => {
+
+router.get('/', (req, res) => {
     res.json(genres)
 })
 
@@ -17,10 +32,15 @@ router.get('/:id', (req, res) => {
     }
 })
 
-router.post('/', (req, res) => {
+router.post('/', upload.single('Book'),  (req, res) => {
     const newGenres = req.body 
-    genres.push(newGenres)
+    const img = req.file
+    genres.push({
+        image: img,
+        genres: newGenres
+        })
     res.json({message: 'Genres has been added successfully', genres})
+    console.log(req.file)
 })
 
 router.put('/:id', (req, res) => {

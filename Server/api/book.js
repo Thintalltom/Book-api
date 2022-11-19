@@ -14,12 +14,13 @@ const storage = multer.diskStorage({
     }
 })
 
+//function for upload image
 const upload = multer({
     storage: storage
 })
 
 //Step 1: get all the books using the get method of the http
-router.get('/',(req, res) => {
+router.get('/', (req, res) => {
     res.json(book)
 })
 
@@ -39,9 +40,12 @@ router.get('/:id', (req, res)=> {
 
 //Step 3: add new books using the post method of http
 router.post('/', upload.single('profile'), (req, res)=> {
-    const newBooks = req.body
-    const img = req.file
-    book.push({newBooks, img})
+    const newBooks = {
+        id: parseInt(req.body.id),
+        title: req.body.title,
+        Author: req.body.Author,
+        img: req.file}
+    book.push(newBooks)
     res.json({message: 'movies has been added', book})
     console.log(req.file)
 })

@@ -4,7 +4,13 @@ import {Container, Navbar, Nav} from 'react-bootstrap'
 import axios from 'axios'
 import { BsFillBookFill } from "react-icons/bs";
 import './book.css'
-const Books = () => {
+import Mainhead from './Mainhead';
+import Mainhead2 from './Mainhead2';
+import Mainhead3 from './Mainhead3';
+import Mainhead4 from './Mainhead4';
+import Mainhead5 from './Mainhead5';
+import Mainhead6 from './Mainhead6';
+const Books = ({slides}) => {
 const [bookData, setBookdata] = useState([{}])
 
     useEffect(() => {
@@ -16,22 +22,31 @@ const [bookData, setBookdata] = useState([{}])
     
    <Container fluid>
     <>
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Book<span className='text-danger'>R</span></Navbar.Brand>
-          <Nav className="mx-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+    <Navbar bg="white" expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">bookR</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav"  className='border-white'/>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mx-auto gap-5">
+            <Nav.Link href="#home" className='text-danger'>Home</Nav.Link>
+            <Nav.Link href="#link">About Us</Nav.Link>
+            <Nav.Link href="#link">Shop </Nav.Link>
+            <Nav.Link href="#link">Blog </Nav.Link>
+            <Nav.Link href="#link">Contact Us</Nav.Link>
+           
           </Nav>
-          <Nav>
-            <Nav.Link>helllo</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-     
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
     </>
-
+    <Container>
+    <Mainhead />
+    <Mainhead2 />
+    <Mainhead3 />
+    <Mainhead4 />
+    <Mainhead5 />
+    <Mainhead6 slides={slides}/>
+    </Container>
    </Container>
     
   )

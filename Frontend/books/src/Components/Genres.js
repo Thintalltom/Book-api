@@ -3,7 +3,7 @@ import axios from 'axios'
 const Genres = () => {
     const [genres, setGenres] = useState([])
 const getGenres = async () => {
-    const response = await  fetch('http://localhost:4000/genres').then(response => response.json()) 
+    const response = await  fetch('http://localhost:4001/genres').then(response => response.json()) 
     setGenres(response)
     console.log(response)
 }

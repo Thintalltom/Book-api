@@ -1,13 +1,156 @@
-.sidebar
+.book-img
 {
-    width: 150px !important;
-    background-color: rgba(0, 0, 255, 0.158) !important; 
+    margin-top: -50px !important;
+    margin-left: 200px !important;
+    height: 10% !important;
+    width: 10% !important;
+    background-color: red !important;   
+    padding: 10px !important;
 }
-.sidebar ul li 
+.mainhead{
+    color: black !important;
+}
+.navs{
+    color: black !important;
+}
+.bookimg{
+    width: 500px !important;
+    border-left: 2px solid red !important;
+    border-top: 2px solid white !important;
+    border-right: 2px solid white !important;
+    border-bottom: 2px solid white !important;
+    opacity: 0.8 !important;
+    z-index: 1 !important;
+}
+.mainhead div h1{
+    font-weight: bolder !important;
+    font-size: 65px !important;
+    
+}
+.mainhead div p{
+    margin-top: 15px !important;
+    
+}
+.mainhead div  h1 span 
 {
-    list-style-type: none !important;
+    color: red !important;
 }
-.sidebar ul li a:hover {
-color:red !important;
-cursor: pointer !important;
+.signBtn{
+    background-color: red !important;
+    color: white !important;
+    border-color: white !important;
+}
+.mainheadCont
+{
+    margin-top: 90px !important;
+}
+.world div h1{
+    font-weight:bolder !important;
+    color: black !important;
+}
+.world{
+    margin-top: 30px !important;
+}
+.popular h1{
+    font-weight:bold !important ;
+    border-color: white !important;
+}
+.popular{
+    margin-top: 40px !important;
+}
+.contact
+{
+    background-color: red !important;
+    color: white !important;
+    border-color: white !important;
+}
+.rotate
+{
+    transform: rotate(1deg) !important;
+    background-color: rgba(255, 228, 196, 0.596) !important;
+    padding: 10px;
+}
+.outside
+{
+    margin-right: 100px;
+    margin-left: -50px;
+    margin-top: 90px;
+    padding: 20px;
+    
+}
+.moveup
+{
+    margin-top: 200px;
+    background-color: aqua;
+    padding: 40px;
+    width: fit-content;
+    border-radius: 10px;
+    position: relative !important;
+    z-index: 1;
+}
+.subbtn
+{
+    background-color: black;
+    color: white;
+}
+.moveup h3{
+    font-weight: bold;
+    color: black !important;
+}
+.darkt
+{
+    padding: 40px;
+    color: white !important;
+    z-index: 0;
+    margin-top: -30px !important;
+    position: relative !important;
+    background-color: rgba(0, 0, 0, 0.555) !important;
+}
+.hodl
+{
+    background-color: antiquewhite !important;
+    padding: 10px !important;
+    z-index: 1 !important;
+}
+.holdcont
+{
+   border-left: 20px solid red !important;
+}
+@media only screen and (max-width: 600px) {
+    .mainhead{
+        display: flex;
+        flex-direction: column;
+    }
+    .bookimg{
+        width: 300px !important;
+    }
+    .book-img
+    {
+        margin-top: 10px !important;
+        margin-left: -20px !important;
+        height: 10% !important;
+        width: 10% !important;
+        background-color: red !important; 
+        padding: 10px !important;
+
+    }
+    .mainheadCont
+    {
+        margin-top: 30px !important;
+    }
+    .rotate{
+        display: flex;
+        flex-direction: column;
+    }
+    .moveup{
+        padding: 10px;
+        font-size: smaller;
+        margin-top: 100px;
+        display: flex;
+        flex-direction: column;
+    }
+    .moveup h1{
+        font-size: smaller !important;
+    }
+    
 }
