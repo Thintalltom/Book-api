@@ -55,7 +55,11 @@ router.put('/:id', (req, res) => {
     const found = book.some(book =>  book.id === parseInt(req.params.id))
 
     if(found) {
-        const updateBook = req.body 
+        const updateBook = {
+            id: parseInt(req.body.id),
+            title: req.body.title,
+            Author: req.body.Author,
+            img: req.file}
         book.map( book => {
             if(book.id ===  parseInt(req.params.id)){
                 book.title = updateBook.title ? updateBook.title: book.title

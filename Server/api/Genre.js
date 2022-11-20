@@ -32,13 +32,14 @@ router.get('/:id', (req, res) => {
     }
 })
 
+
 router.post('/', upload.single('Book'),  (req, res) => {
-    const newGenres = req.body 
-    const img = req.file
-    genres.push({
-        image: img,
-        genres: newGenres
-        })
+    const newGenres = {
+        id: parseInt(req.body.id),
+        name: req.body.name,
+        img: `http://localhost:4001/genres/${req.file.filename}`
+    }
+    genres.push(newGenres)
     res.json({message: 'Genres has been added successfully', genres})
     console.log(req.file)
 })
