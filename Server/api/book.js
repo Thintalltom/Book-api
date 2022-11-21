@@ -44,7 +44,7 @@ router.post('/', upload.single('profile'), (req, res)=> {
         id: parseInt(req.body.id),
         title: req.body.title,
         Author: req.body.Author,
-        img: req.file}
+        img: `http://localhost:4001/books/${req.file.filename}`}
     book.push(newBooks)
     res.json({message: 'movies has been added', book})
     console.log(req.file)
