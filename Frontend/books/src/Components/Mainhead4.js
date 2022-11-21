@@ -27,7 +27,8 @@ const Mainhead4 = () => {
 
     ]
   return (
-    <Container> 
+    <Container className='mt-4'> 
+    <h2>Our Services</h2>
         <Row>
             {price.map((price) => (
                  <Col>
@@ -38,7 +39,6 @@ const Mainhead4 = () => {
                  </div>
                  </Col>
             ))}
-           
         </Row>
     </Container>
   )

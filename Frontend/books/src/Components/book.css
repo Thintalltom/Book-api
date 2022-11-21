@@ -7,6 +7,35 @@
     background-color: red !important;   
     padding: 10px !important;
 }
+.bsucc{
+   background-color: red !important;
+   color: white !important;
+   padding: 10px !important;
+   border-radius: 10px !important;
+}
+.moleft 
+{
+    margin-left:100px !important ;
+    margin-top: -50px !important;
+}
+.cardimmg{
+    width: 250px !important;
+    height: 250px !important;
+    border-radius: 10px !important;
+}
+.poto
+{
+    width: 200px !important;
+    border-radius: 20px !important;
+    margin-left: 20px !important;
+    height: 200px !important;
+    margin-top: -60px !important;
+}
+.poto1
+{
+    width: 200px !important;
+    border-radius: 20px !important;
+}
 .mainhead{
     color: black !important;
 }
@@ -152,5 +181,23 @@
     .moveup h1{
         font-size: smaller !important;
     }
-    
+    .world{
+        display: flex;
+        flex-direction: column;
+    }
+    .moleft{
+        display: flex;
+        flex-direction: column;
+        margin-left:-10px!important ;
+    }
+    .bsucc{
+        background-color: red !important;
+        color: white !important;
+        width: fit-content !important;
+        border-radius: 10px !important;
+        padding: 10px !important;
+     }
+    .poto{
+        display: none !important;
+    }
 }

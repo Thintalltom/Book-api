@@ -12,9 +12,13 @@ const getGenres = async () => {
       }, [])
   return (
     <div>
-        {genres.map((gen) => (
-            <h1>{gen.name}</h1>
-        ))}
+        {genres.map((gen) => {
+            return <div> 
+                <h1>{gen.name}</h1>
+            <img src={gen.img} />
+            </div>
+            
+})}
         <h1>hello</h1>
     </div>
   )
