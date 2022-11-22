@@ -3,16 +3,22 @@ import {Container, Row, Col} from 'react-bootstrap'
 import './book.css'
 const Mainhead3 = () => {
   const [books, setBooks] = useState([])
-
+  const [genres, setGenres] = useState([])
   const getBook = async () => {
     const response = await fetch('http://localhost:4001/books').then
     (response => response.json())
-    console.log(response)
     setBooks(response)
+  }
+
+  const getGenres = async () => {
+    const response = await fetch('http://localhost:4001/genres').then
+    (response => response.json())
+    setGenres(response)
   }
 
   useEffect(() => {
     getBook()
+    getGenres()
   }, [])
   
   return (
@@ -25,21 +31,40 @@ const Mainhead3 = () => {
         </p>
         </div>
 
+
         <div className='container'>
-          <Row>
+          <h4>Popular Books</h4>
+          <div className='d-flex side gap-5'>
             {books.map((book) => (
-                 <div className='col-4 '>
-                 <div className='card border-white'>
-                   <img src={book.img}  className=' cardimmg'/> 
-                   <div className='card-body'>
-                     <p className='card-text'>{book.title}</p>
-                     <h6 className='card-text'> Author: {book.Author} </h6>
-                   </div>
+                 <div>
+                 <div className='text-dark' key={book.id}>
+                   <img src={book.img} className='books h-75'/> 
+                     <p>{book.title}</p>
+                     <h6> Author: {book.Author} </h6>
                  </div>
                  </div>
             ))}
-          </Row>
+          </div>
         </div>
+
+        <Container>
+          <h4>Genres</h4>
+          <Row>
+            {genres.map((gen) => (
+              <Col key={gen.id}>
+                <div className='card border-white'>
+                <img src={gen.img} className='card-img' />
+                <div className='card-body'>
+                <p className='card-text'>{gen.name}</p>
+                </div>
+                </div>
+            
+              
+              </Col>
+            ))}
+
+          </Row>
+        </Container>
        
     </Container>
   )

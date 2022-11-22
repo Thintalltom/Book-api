@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Button } from 'react-bootstrap'
 import bookcover from '../Pictures/bookcover2.jpg'
+import {Link} from 'react-router-dom'
 import './book.css'
 const Mainhead = () => {
   return (
@@ -14,7 +15,10 @@ const Mainhead = () => {
                         Bookr brings the perfection to you through free learning and <br />  reading of books as said book enlighten a person
                     </p>
                     <div>
-                        <Button className='me-3 signBtn border-none'>Sign Up </Button>
+                      <Link to='/signup'>
+                      <Button className='me-3 signBtn border-none'>Register </Button>
+                      </Link>
+                       
                         <Button className='text-dark btn-white border-dark bg-white'>Log in </Button>
                     </div>
             </div>

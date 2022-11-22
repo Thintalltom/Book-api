@@ -145,6 +145,23 @@
 {
    border-left: 20px solid red !important;
 }
+.back
+{
+    width: 100% !important;
+    opacity: 0.8 !important;
+
+}
+.books
+{
+    width: 300px !important;
+    height: 200px !important;
+}
+.aliC
+{
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 10px !important;
+}
 @media only screen and (max-width: 600px) {
     .mainhead{
         display: flex;
@@ -199,5 +216,16 @@
      }
     .poto{
         display: none !important;
+    }
+    .ddflex
+    {
+        display: flex !important;
+
+        flex-direction: column !important;
+    }
+    .side
+    {
+        display: flex !important;
+        flex-direction: column !important;
     }
 }
