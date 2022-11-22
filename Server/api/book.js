@@ -5,6 +5,21 @@ let book = require('../book')
 // call on multer 
 const multer = require ('multer')
 const path = require('path')
+const mysql = require('mysql2')
+
+const db= mysql.createConnection({
+    host:'localhost',
+    user: 'root',
+    password: 'password',
+    database: 'bookdb'
+})
+
+db.connect((err) => {
+    if(err) {
+        throw err
+    }
+    console.log('connected to db')
+})
 
 // storage destination
 const storage = multer.diskStorage({
@@ -21,7 +36,17 @@ const upload = multer({
 
 //Step 1: get all the books using the get method of the http
 router.get('/', (req, res) => {
-    res.json(book)
+//step 1 select all elements in the table
+    db.query('SELECT * FROM books', (err, result) => {
+        if(err) {
+            res.status(400).json(err)
+        } else
+        {
+            res.json(result) 
+        }
+       
+    })
+  
 })
 
 //Step 2: get books based on id using the get method
