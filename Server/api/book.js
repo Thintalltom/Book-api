@@ -37,7 +37,7 @@ const upload = multer({
 //Step 1: get all the books using the get method of the http
 router.get('/', (req, res) => {
 //step 1 select all elements in the table
-    db.query('SELECT * FROM books', (err, result) => {
+    db.query('SELECT * FROM book', (err, result) => {
         if(err) {
             res.status(400).json(err)
         } else
@@ -65,14 +65,28 @@ router.get('/:id', (req, res)=> {
 
 //Step 3: add new books using the post method of http
 router.post('/', upload.single('profile'), (req, res)=> {
+    // to upload data into the server you have to state the data 
     const newBooks = {
-        id: parseInt(req.body.id),
         title: req.body.title,
         Author: req.body.Author,
-        img: `http://localhost:4001/books/${req.file.filename}`}
-    book.push(newBooks)
-    res.json({message: 'movies has been added', book})
-    console.log(req.file)
+        image: `http://localhost:4001/books/${req.file.filename}`
+    }
+   
+    db.query("INSERT INTO book set ? ",[newBooks], (err, result) => {
+        if(err)
+        {
+            res.status(400).json(err)
+            if(result && result.lenght >= 1){
+                const imgdata = Buffer.from(result[0].photo, 'base64')
+
+                res.type('png').send(imgdata)
+            }
+        }else
+        {
+            res.status(200).json(result);
+        }
+    })
+    
 })
 
 // step4: editing a book using the put method

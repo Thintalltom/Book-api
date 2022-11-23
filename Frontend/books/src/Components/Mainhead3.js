@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import {Container, Row, Col} from 'react-bootstrap'
 import './book.css'
+
 const Mainhead3 = () => {
   const [books, setBooks] = useState([])
   const [genres, setGenres] = useState([])
@@ -8,12 +9,14 @@ const Mainhead3 = () => {
     const response = await fetch('http://localhost:4001/books').then
     (response => response.json())
     setBooks(response)
+    console.log(books)
   }
 
   const getGenres = async () => {
     const response = await fetch('http://localhost:4001/genres').then
     (response => response.json())
     setGenres(response)
+    
   }
 
   useEffect(() => {
@@ -38,7 +41,7 @@ const Mainhead3 = () => {
             {books.map((book) => (
                  <div>
                  <div className='text-dark' key={book.id}>
-                   <img src={book.img} className='books h-75'/> 
+                   <img src={book.image} alt='image not present' className='books'/> 
                      <p>{book.title}</p>
                      <h6> Author: {book.Author} </h6>
                  </div>

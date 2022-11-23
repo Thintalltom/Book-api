@@ -12,6 +12,8 @@ app.use('/books', express.static('./upload/images'))
 app.use('/genres',express.static('./upload/images') )
 app.use('/books', require('./api/book'))
 app.use('/genres', require('./api/Genre'))
+app.use('/login', require('./api/login'))
+app.use('/auth', require('./api/auth') )
 app.listen('4001', (req, res) => {
     console.log('Now on port 4000')
 })
