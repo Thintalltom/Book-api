@@ -2,6 +2,12 @@ const express = require('express')
 const mysql = require("mysql2")
 const router = express.Router()
 const path = require('path')
+const bcrypt = require('bcrypt')
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
+const session = require ('express-session')
+//salRounds determines the amount of time needed to hash the password
+const saltRounds = 10;
 
 
 const db= mysql.createConnection({
@@ -26,6 +32,7 @@ router.get('/', (req, res) => {
             } else
             {
                 res.json(result) 
+                res.send(result)
             }
            
         })
@@ -37,14 +44,16 @@ router.get('/', (req, res) => {
         // to upload data into the server you have to state the data 
             const username = req.body.username
             const password= req.body.password
-    
-        db.query("INSERT INTO login (email, password) VALUES (?, ?) ",[username, password], (err, result) => {
-         console.log(err)
-        })
-        
+        // to hash the password we use bcrypt.hash before the insert method
+        bcrypt.hash(password, saltRounds, (err, hash) => {
+            if(err) {
+                console.log(err)
+            }
+            db.query("INSERT INTO login (email, password) VALUES (?, ?) ",[username, hash], (err, result) => {
+                res.send(result)
+               })
+        }) 
     })
 
-    router.get('/', (req, res) => {
-        
-    })
+    
 module.exports = router

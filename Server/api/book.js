@@ -76,11 +76,6 @@ router.post('/', upload.single('profile'), (req, res)=> {
         if(err)
         {
             res.status(400).json(err)
-            if(result && result.lenght >= 1){
-                const imgdata = Buffer.from(result[0].photo, 'base64')
-
-                res.type('png').send(imgdata)
-            }
         }else
         {
             res.status(200).json(result);

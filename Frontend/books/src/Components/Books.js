@@ -27,12 +27,12 @@ const [bookData, setBookdata] = useState([{}])
         <Navbar.Brand href="#home">bookR</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"  className='border-white'/>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mx-auto gap-5">
-            <Nav.Link href="#home" className='text-danger'>Home</Nav.Link>
-            <Nav.Link href="#link">About Us</Nav.Link>
-            <Nav.Link href="#link">Shop </Nav.Link>
-            <Nav.Link href="#link">Blog </Nav.Link>
-            <Nav.Link href="#link">Contact Us</Nav.Link>
+          <Nav className="mx-auto gap-5 navtext">
+            <Nav.Link href="#home" className='navtext'>Home</Nav.Link>
+            <Nav.Link href="#link" className='navtext'>About Us</Nav.Link>
+            <Nav.Link href="#link"className='navtext'>Shop </Nav.Link>
+            <Nav.Link href="#link"className='navtext'>Blog </Nav.Link>
+            <Nav.Link href="#link" className='navtext'>Contact Us</Nav.Link>
            
           </Nav>
         </Navbar.Collapse>

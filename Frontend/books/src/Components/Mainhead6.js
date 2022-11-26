@@ -12,35 +12,27 @@ const Mainhead6 = () => {
         },
         {
             image:'https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363__340.jpg',
-            text:'it is a beautiful app that lallows for easy reading by users and makes it easy to study',
+            text:'it is a beautiful app that lallows for easy reading by users and makes it easy to study, it is a beautiful app that lallows for easy reading by users and makes it easy to study',
             name:'trip'
         },
         {
             image:'https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363__340.jpg',
-            text:'it is a beautiful app that lallows for easy reading by users and makes it easy to study',
+            text:'it is a beautiful app that lallows for easy reading by users and makes it easy to study,it is a beautiful app that lallows for easy reading by users and makes it easy to study',
             name:'stone'
         },
         {
             image:'https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363__340.jpg',
-            text:'it is a beautiful app that lallows for easy reading by users and makes it easy to study',
+            text:'it is a beautiful app that lallows for easy reading by users and makes it easy to study,it is a beautiful app that lallows for easy reading by users and makes it easy to study',
             name:'kelvin'
         },
         {
             image:'https://cdn.pixabay.com/photo/2017/11/02/14/36/model-2911363__340.jpg',
-            text:'it is a beautiful app that lallows for easy reading by users and makes it easy to study',
+            text:'it is a beautiful app that lallows for easy reading by users and makes it easy to study, it is a beautiful app that lallows for easy reading by users and makes it easy to study',
             name:'dollar'
         },
     ]
 
     const Footer = [
-        {
-            header:'About Us', 
-            info: 'About us',
-            info2: 'About us',
-            info3: 'About us',
-            info4: 'About us',
-            info5: 'About us',
-    },
     {
         header:'Information', 
         info: 'About us',
@@ -89,30 +81,24 @@ const Mainhead6 = () => {
                 <Button onClick={nextSlides} className='text-white bg-dark border-white'><BsFillArrowRightCircleFill /></Button>
         </div>
         
-        <div className='d-flex  rotate mt-5 shadow-sm'>
-            <div className='outside'>
-                <img src={book} width={250} />
-            </div>
+        <div className='mt-5'>
         <div>
           <h5>Book Reviews</h5>
             <div className='slider'>
-            <Row>
                 {Book.map((book, index) => (
                     <>
                     {index === current && (
-                        <div className=''>
-                    <div className='col hodl card' style={{ width: '18rem' }}>
-                    <div className='card-body'> 
-                        <img src={book.image} className='card-img' /> 
-                    <p className='card-text'>{book.text}</p>
-                    <h6 className='card-title'> {book.name}</h6>
+                    <div className='align-item-center'> 
+                    <div className='align-item-center justify-content-center d-flex'>
+                    <img src={book.image} className='bookimge'/> 
                     </div>
-                    </div>
+                   
+                    <p className='text-center wordbk'>{book.text}</p>
+                    <h5> {book.name}</h5>
                     </div>
                     )}
                     </>
                 ))}
-                </Row>
             </div>
             </div>
         </div>
@@ -126,11 +112,10 @@ const Mainhead6 = () => {
            </div>
        </div>
 
-       <div className='darkt'>
-            <Row>
-                
+       <div className='darkt'>     
+       <div className='d-flex gap-5 container-fluid  disp'>      
                 {Footer.map((footer) => (
-                    <Col className='text-white'>
+                    <div className='text-white  textxx'>
                     <h6>{footer.header}</h6>
                     <p>
                         {footer.info}
@@ -147,10 +132,9 @@ const Mainhead6 = () => {
                     <p>
                         {footer.info5}
                     </p>
-                    </Col>
+                    </div>
                 ))}
-                
-            </Row>
+                </div> 
        </div>
     </Container>
   )

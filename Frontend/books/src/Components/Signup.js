@@ -6,13 +6,14 @@ import Axios from'axios'
 const Signup = () => {
     const[usernameReg, setusernameReg] = useState('')
     const[passwordReg, setpasswordReg] = useState('')
-
+  
     const Register = () => {
         Axios.post('http://localhost:4001/login', {
             username: usernameReg,
             password: passwordReg
         }).then((response) => {
-            console.log(response)});
+          console.log(response)
+        });
     };
 
 
@@ -27,6 +28,8 @@ const Signup = () => {
                 <h5 className='text-center'>Welcome to BookR</h5>
                 <h5 className='text-center'>Register</h5>
                 <Form>
+
+
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" onChange={(e) => {setusernameReg(e.target.value)}} />

@@ -8,19 +8,26 @@ const Login = () => {
     const[password, setPassword] = useState('')
 
     const [loginStatus, setLoginstatus] = useState('')
+    // making an axios post to the database to post on auth
+    Axios.defaults.withCredentials = true;
     const Login = () => {
         Axios.post('http://localhost:4001/auth', {
             username: username,
             password: password
         }).then((response) => {
-            //function for login
-           if(response.data.message) {
-               setLoginstatus('wrong user')
-           } else {
-               navigate('/dashboard')
-           }});
+            if(response.data.message){
+                setLoginstatus(response.data.message)
+            }
+            else
+            {
+                navigate('/dashboard')
+            }
+        });
     }
 
+    useEffect(() => {
+        Axios.get('http://localhost:4001/auth').then((response) => console.log(response))
+    }, [])
     
   return (
     <Container fluid>

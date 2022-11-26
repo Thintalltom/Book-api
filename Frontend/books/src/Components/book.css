@@ -2,10 +2,10 @@
 {
     margin-top: -50px !important;
     margin-left: 200px !important;
-    height: 10% !important;
-    width: 10% !important;
-    background-color: red !important;   
-    padding: 10px !important;
+    height: 100% !important;
+    width: 50% !important;
+    background-color: rgba(255, 0, 0, 0.644) !important;   
+    padding: 20px !important;
 }
 .bsucc{
    background-color: red !important;
@@ -93,19 +93,12 @@
     color: white !important;
     border-color: white !important;
 }
-.rotate
+.wordbk
 {
-    transform: rotate(1deg) !important;
-    background-color: rgba(255, 228, 196, 0.596) !important;
-    padding: 10px;
-}
-.outside
-{
-    margin-right: 100px;
-    margin-left: -50px;
-    margin-top: 90px;
-    padding: 20px;
-    
+    word-spacing: 5px !important;
+    word-break: break-all !important;
+    color:  black !important;
+    font-weight: bolder !important;
 }
 .moveup
 {
@@ -116,6 +109,11 @@
     border-radius: 10px;
     position: relative !important;
     z-index: 1;
+}
+.bookimge{
+    width: 300px !important;
+    border-radius: 10px !important;
+    
 }
 .subbtn
 {
@@ -133,7 +131,15 @@
     z-index: 0;
     margin-top: -30px !important;
     position: relative !important;
-    background-color: rgba(0, 0, 0, 0.555) !important;
+    background-color: black !important;
+}
+.navtext{
+    font-weight: bold !important;
+    color: black !important;
+}
+.navtext:hover
+{
+    color: red !important;
 }
 .hodl
 {
@@ -161,6 +167,68 @@
     justify-content: center !important;
     align-items: center !important;
     padding: 10px !important;
+}
+.topbar
+{
+    background-color: white;
+    width: fit-content!important;
+    height: 100vh !important;
+    background-size: cover;
+    z-index: 2;
+}
+.topbar ul{
+    list-style: none;
+    gap: 1rem;
+    padding: 1rem;
+}
+.topbar ul li a {
+    row-gap: 5;
+    line-height: 3.8;
+   font-weight: bold !important;
+   text-decoration: none;
+   color: black !important;
+}
+.bookr
+{
+    background-color:rgba(0, 68, 255, 0.356) !important;
+    width: 100%!important;
+}
+.bookr h5{
+    font-weight: bolder !important;
+}
+.genres
+{
+    background-color: white !important;
+    width: 100%;
+    padding-top: 5px !important ;
+    background-size: cover;
+    height: 30vh;
+}
+.textxx{
+    margin-left: 100px !important;
+    margin-top: 10px !important;
+}
+.textxx :hover{
+    color: red !important;
+    cursor: pointer !important;
+    background-color: rgba(255, 255, 255, 0.089) !important;
+   
+}
+.genimg{
+    width: 250px !important;
+   
+}
+.genimg:hover{
+    opacity: 0.7 !important;
+    cursor: pointer !important;
+
+}
+.proimg
+{
+    width: 250px !important;
+}
+.pbook{
+    font-weight: bold !important;
 }
 @media only screen and (max-width: 600px) {
     .mainhead{
@@ -227,5 +295,15 @@
     {
         display: flex !important;
         flex-direction: column !important;
+    }
+    .textxx{
+        font-size: xx-small !important;
+        margin-left: 0px !important;
+    }
+    .disp
+    {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
     }
 }
