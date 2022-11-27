@@ -34,6 +34,7 @@ app.use('/login', require('./api/login'))
 app.use('/auth', require('./api/auth') )
 app.use('/maingenres', require('./api/maingenres'))
 app.use('/mainbooks', require('./api/mainBook'))
+app.use('/addbook', require('./api/addbook'))
 app.listen('4001', (req, res) => {
     console.log('Now on port 4001')
 })
