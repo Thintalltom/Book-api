@@ -6,6 +6,12 @@ import Login from './Components/Login'
 import Dashboard from './Components/Dashboard';
 import Probooks from './Components/listofbooks/Probooks';
 import Creator from './Components/Creator';
+import Update from './Components/Update';
+import Genreinform from './Components/Bookinfo/Genreinform';
+import Kidsinfo from './Components/Bookinfo/Kidsinfo';
+import Documentinfo from './Components/Bookinfo/Documentinfo';
+import Programinfo from './Components/Bookinfo/Programinfo';
+import Docs from './Components/Bookinfo/Docs';
 import './App.css';
 
 function App() {
@@ -24,7 +30,12 @@ const slides= () => {
        <Route path ='/dashboard' element={<Dashboard />}  />
        <Route path ='/probook' element={<Probooks />}  />
        <Route path ='/creator' element={<Creator />}  />
-
+       <Route path ='/update/:id' element={<Update />}  />
+       <Route path ='/inform/:id' element={<Genreinform />}  />
+       <Route path ='/kid/:id' element={<Kidsinfo />}  />
+       <Route path ='/Document/:id' element={<Documentinfo />}  />
+       <Route path ='/program/:id' element={<Programinfo />}  />
+       <Route path ='/Docs/:id' element={<Docs />}  />
      </Routes>
      </BrowserRouter>
     

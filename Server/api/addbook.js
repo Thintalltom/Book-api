@@ -5,25 +5,22 @@ const addbook = require('../addbook')
 const mysql = require ('mysql2')
 const path = require('path')
 
-const db= mysql.createConnection({
-    host:'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'bookdb'
-})
+const db= require('../config/database')
 
 
 const storage = multer.diskStorage({
-    destination: './upload/images',
+    destination: (req, file, cb) => {
+        cb(null, './upload/images')
+    },
     filename: (req, file, cb) => {
-        return cb(null, `${file.fieldname}_${Date.now()}${path.extname(file.originalname)}`)
+        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
 })
 
-//function for upload image
 const upload = multer({
     storage: storage
 })
+
 
 db.connect((err) => {
     if(err) {
@@ -48,24 +45,64 @@ router.get('/', (req, res) => {
         })
 })
 
-router.post('/',upload.single('image'), (req, res)=> {
-    // to upload data into the server you have to state the data 
- 
-       const title = req.body.title
-       const Author = req.body.author
-       const image = req.file
-   
-   db.query("INSERT INTO addbook set ? ",[Author, title, image], (err, result) => {
-       if(err)
-       {
-           res.status(400).json(err)
-       }else
-       {
-           res.status(200).json(result);
-       }
-   })
-   
+router.post('/',  upload.single('file'), (req, res) => {
+
+            const data = {
+                image: `http://localhost:4001/books/${req.file.filename}`,
+                title: req.body.title,
+                author: req.body.author
+            }
+            db.query("INSERT INTO addbook set ?", [data], (err, result) => {
+                if(err)
+                {
+                    res.status(400).json(err)
+                }else
+                {
+                    res.status(200).json(result);
+                    
+                }
+            })
+        })
+
+
+router.delete('/:id', (req, res) => {
+    const data = req.params.id
+
+    db.query('DELETE FROM addbook WHERE idaddbook = ?', [data], (err, result) => {
+        if(err)
+        {
+            res.status(400).json(err)
+        }else
+        {
+            res.status(200).json(result);
+            
+        }
+    })
 })
+
+router.put('/:id', upload.single('file'), (req, res) => {
+
+    const data = req.params.id
+    const Author = req.body.author
+    const title =  req.body.title
+    const image = `http://localhost:4001/books/${req.file.filename}`
+        
+
+    db.query('UPDATE addbook SET `Author` = ?, `title` = ?,  `image` = ? WHERE idaddbook = ?', [Author, title, image, data], (err, result) => {
+        if(err)
+        {
+            res.status(400).json(err)
+        }else
+        {
+            res.status(200).json({
+                result,
+                message: 'Book has been update successfully'
+            });
+            
+        }
+    })
+})
+ 
 
 
 module.exports = router

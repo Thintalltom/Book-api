@@ -26,16 +26,24 @@ const Login = () => {
     }
 
     useEffect(() => {
-        Axios.get('http://localhost:4001/auth').then((response) => console.log(response))
+        Axios.get('http://localhost:4001/auth').then((response) =>{
+            if(response.data.loggedIn == true){
+                setLoginstatus(response.data.user[0].username)
+            }
+        })
     }, [])
     
   return (
     <Container fluid>
     <Row className='ddflex'>
-
+   
         <Col className='aliC p-5'>
             <h5 className='text-center'>Welcome to BookR</h5>
             <h5 className='text-center'>Login</h5>
+
+     <div>
+      <h6 className='text-danger text-center'>{loginStatus}</h6>
+  </div>
             <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -55,9 +63,7 @@ const Login = () => {
             </Form>
         </Col>
     </Row>
-  <div>
-      <h1>{loginStatus}</h1>
-  </div>
+  
 </Container>
   )
 }

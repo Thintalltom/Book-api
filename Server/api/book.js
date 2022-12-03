@@ -6,13 +6,8 @@ let book = require('../book')
 const multer = require ('multer')
 const path = require('path')
 const mysql = require('mysql2')
+const db= require('../config/database')
 
-const db= mysql.createConnection({
-    host:'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'bookdb'
-})
 
 db.connect((err) => {
     if(err) {

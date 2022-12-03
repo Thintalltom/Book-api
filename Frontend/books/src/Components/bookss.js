@@ -16,10 +16,7 @@ const Bookss = () => {
           <div className='mt-3'>
           <Probooks />
           </div>
-          <h6 className='pbook'>Documentary books</h6>
-          <div className='mt-3'>
-          <Probooks />
-          </div>
+          
           <h6 className='pbook'>Kids Books</h6>
           <div className='mt-3'>
           <Kidsbooks />

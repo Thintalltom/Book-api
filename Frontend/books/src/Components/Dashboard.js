@@ -1,8 +1,9 @@
 import React,{useState, useEffect} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import {Container, Button, Col, Row} from 'react-bootstrap'
 import Genres from './Genres'
 import Bookss from './bookss'
+import Pbooks from './Pbooks'
 import './book.css'
 const Dashboard = () => {
     const navigate = useNavigate()
@@ -12,7 +13,7 @@ const Dashboard = () => {
       const response = await fetch('http://localhost:4001/maingenres').then
       (response => response.json())
       setGenre(response)
-      console.log(response)
+ 
       
     }
   useEffect(() => {
@@ -39,16 +40,18 @@ const Dashboard = () => {
 
 
          <li>
-           <a href='#'>
-             Creator Mode
-           </a>
+           <Link to='/creator'>
+           Creator
+           </Link> 
          </li>
 
          <li>
            <a>
+             <Link to='/login'>
              <Button className='btn-danger'>
                 Log out
              </Button>
+             </Link>
            </a>
          </li>
        </ul>
@@ -58,8 +61,15 @@ const Dashboard = () => {
        <div>
         <Genres />
        </div>
+       <div className='mt-3 mb-3'>
+         <input type='text' placeholder='Search for book' className='w-50 ' />
+         <button>Search</button>
+       </div>
        <div>
       <Bookss />
+       </div>
+       <div>
+         <Pbooks />
        </div>
      </Container>
      

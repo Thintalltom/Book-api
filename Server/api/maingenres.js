@@ -4,15 +4,7 @@ let maingenres = require('../Maingenres')
 // call on multer 
 const multer = require ('multer')
 const path = require('path')
-const mysql = require('mysql2')
-
-
-const db= mysql.createConnection({
-    host:'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'bookdb'
-})
+const db= require('../config/database')
 
 const storage = multer.diskStorage({
     destination: './upload/images',
@@ -65,6 +57,23 @@ db.query("INSERT INTO genre2 set ? ",[newGenres], (err, result) => {
     }
 })
 
+})
+
+// function to get details of a particular genres
+router.get('/:id', (req, res) => {
+    const data = req.params.id
+
+    db.query('SELECT * FROM genre2 WHERE id = ?', [data], (err, result) => {
+        if(err){
+            res.status(400).json(err)
+        }else 
+        {
+            res.status(200).json({
+                result, 
+                message: 'use gotten succesffuly'
+            })
+        }
+    })
 })
 
 module.exports = router

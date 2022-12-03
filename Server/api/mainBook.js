@@ -2,15 +2,8 @@ const express = require('express')
 const multer =require('multer')
 const router = express.Router()
 const mainBook = require('../Mainbooks')
-const mysql = require ('mysql2')
 const path = require('path')
-
-const db= mysql.createConnection({
-    host:'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'bookdb'
-})
+const db= require('../config/database')
 
 
 const storage = multer.diskStorage({
@@ -70,6 +63,9 @@ router.post('/',upload.single('program'), (req, res)=> {
 
 
 
+
+
+
 //api for documentary books
 router.post('/documentary',upload.single('docu'), (req, res)=> {
     // to upload data into the server you have to state the data 
@@ -103,6 +99,7 @@ router.get('/documentary', (req, res) => {
            
         })
 })
+
 
 
 
@@ -140,6 +137,8 @@ router.get('/kids', (req, res) => {
         })
 })
 
+
+
 ///api for economics books
 router.post('/economics',upload.single('eco'), (req, res)=> {
     // to upload data into the server you have to state the data 
@@ -173,5 +172,7 @@ router.get('/economics', (req, res) => {
            
         })
 })
+
+
    
    module.exports = router

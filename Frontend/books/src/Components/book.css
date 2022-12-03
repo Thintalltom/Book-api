@@ -171,8 +171,9 @@
 .topbar
 {
     background-color: white;
-    width: fit-content!important;
+    width: 10%!important;
     height: 100vh !important;
+
     background-size: cover;
     z-index: 2;
 }
@@ -188,6 +189,16 @@
    text-decoration: none;
    color: black !important;
 }
+
+.topbar li:hover{
+    background-color: rgba(0, 0, 0, 0.253) !important;
+    text-align: center !important;
+    height: 10% !important ; 
+}
+.topbar a:hover{
+    margin-top: 5px !important;
+}
+
 .bookr
 {
     background-color:rgba(0, 68, 255, 0.356) !important;
@@ -229,6 +240,59 @@
 }
 .pbook{
     font-weight: bold !important;
+    color: blue !important;
+}
+.titleform{
+   
+    width: 60% !important ; 
+    background-size: cover !important ;
+    margin: 1px solid black !important;
+    margin-top: 50px !important;
+    margin-left: 8cm !important;
+    gap: 100px !important;
+}
+input
+{
+    width: 90% !important;
+    border-color: none;
+    height: 90% !important;
+   
+}
+.addbnn{
+    border: none !important;
+    background-color: rgba(255, 174, 0, 0.884);
+    padding: 10px !important;
+    margin-top: 30px !important;
+    border-radius: 5px;
+    color: white !important;
+}
+.addbnn:hover{
+    background-color: rgba(255, 0, 0, 0.575) !important;
+}
+.file1
+{
+   padding: 10px;
+    border: none !important;
+}
+.file1 input{
+    cursor: pointer !important;
+}
+
+.f1box
+{
+    background-color: rgba(0, 0, 255, 0.281) !important;
+    background-size: cover;
+    color: white !important;
+    padding: 100px !important;
+    margin-top: 10px !important;
+}
+.titleblock
+{
+    padding: 10px !important;
+}
+.titleblock:hover{
+    border-color: rgba(0, 162, 255, 0.212) !important;
+    cursor: pointer !important;
 }
 @media only screen and (max-width: 600px) {
     .mainhead{

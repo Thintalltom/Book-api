@@ -4,13 +4,7 @@ const genres = require('../Genre')
 const multer = require('multer')
 const path = require('path')
 const mysql = require('mysql2')
-
-const db= mysql.createConnection({
-    host:'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'bookdb'
-})
+const db= require('../config/database')
 
 db.connect((err) => {
     if(err) {

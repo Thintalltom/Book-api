@@ -4,13 +4,8 @@ const router = express.Router()
 const path = require('path')
 const bcrypt = require('bcrypt')
 const saltRounds = 10;
+const db= require('../config/database')
 
-const db = mysql.createConnection({
-    host:'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'bookdb'
-})
 
 db.connect((err) => {
     try {
@@ -47,6 +42,14 @@ router.post('/',  (req, res)=> {
             }
     })
     
+})
+
+router.get('/', (req, res) => {
+    if(req.session.user){
+        res.send({loggedIn: true, user: req.session.user})
+    } else {
+        res.send({loggedIn: false})
+    }
 })
 
 module.exports = router

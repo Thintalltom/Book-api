@@ -1,5 +1,4 @@
 const express = require('express')
-const mysql = require("mysql2")
 const router = express.Router()
 const path = require('path')
 const bcrypt = require('bcrypt')
@@ -8,14 +7,7 @@ const cookieParser = require('cookie-parser')
 const session = require ('express-session')
 //salRounds determines the amount of time needed to hash the password
 const saltRounds = 10;
-
-
-const db= mysql.createConnection({
-    host:'localhost',
-    user: 'root',
-    password: 'password',
-    database: 'bookdb'
-})
+const db= require('../config/database')
 
 db.connect((err) => {
     if(err) {

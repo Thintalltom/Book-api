@@ -4,12 +4,12 @@ import {Container, Navbar, Nav} from 'react-bootstrap'
 import axios from 'axios'
 import { BsFillBookFill } from "react-icons/bs";
 import './book.css'
-import Mainhead from './Mainhead';
-import Mainhead2 from './Mainhead2';
-import Mainhead3 from './Mainhead3';
-import Mainhead4 from './Mainhead4';
-import Mainhead5 from './Mainhead5';
-import Mainhead6 from './Mainhead6';
+import Mainhead from './Body/Mainhead';
+import Mainhead2 from './Body/Mainhead2';
+import Mainhead3 from './Body/Mainhead3';
+import Mainhead4 from './Body/Mainhead4';
+import Mainhead5 from './Body/Mainhead5';
+import Mainhead6 from './Body/Mainhead6';
 const Books = ({slides}) => {
 const [bookData, setBookdata] = useState([{}])
 
