@@ -8,7 +8,7 @@ const Kidsbooks = () => {
 
 
     const getKids = async () => {
-      const response = await  fetch('http://localhost:4001/mainbooks/kids').then((response) =>  response.json())
+      const response = await  fetch('http://localhost:4001/kidsbook').then((response) =>  response.json())
       setKidbooks(response)
      
      
@@ -22,9 +22,9 @@ const Kidsbooks = () => {
     {kidsbooks.map((prog) => (
         <div key ={prog.idkid}>
            <img src={prog.image} alt='book'  className='proimg'/> 
-           <h6 className='pbook'>{prog.Author}</h6>
-           <p className='pbook'>{prog.title}</p>
-           <Link to={`/kid/${prog.idkid}`}> <Button>View</Button></Link>
+           <p className='fw-normal'>Title: <span className='fw-light'>{prog.title}</span></p>
+           <h6 className='fst-italic'>Author: <span>{prog.Author}</span></h6>
+           <Link to={`/kid/${prog.idkid}`}> <Button className='btn-danger'>View</Button></Link>
         </div>
     ))}
     </div>

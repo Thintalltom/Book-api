@@ -1,10 +1,9 @@
 const express = require('express')
 const multer =require('multer')
 const router = express.Router()
-const mainBook = require('../Mainbooks')
+const documentary = require('../economic')
 const path = require('path')
 const db= require('../config/database')
-
 
 const storage = multer.diskStorage({
     destination: './upload/images',
@@ -22,7 +21,6 @@ db.connect((err) => {
     if(err) {
         throw err
     }
-    console.log('connected to db6')
 })
 
 
@@ -30,7 +28,7 @@ db.connect((err) => {
 //Step 1: get all the books using the get method of the http
 router.get('/', (req, res) => {
     //step 1 select all elements in the table
-        db.query('SELECT * FROM book2', (err, result) => {
+        db.query('SELECT * FROM economic', (err, result) => {
             if(err) {
                 res.status(400).json(err)
             } else
@@ -41,15 +39,16 @@ router.get('/', (req, res) => {
         })
 })
 
-router.post('/',upload.single('program'), (req, res)=> {
+router.post('/',upload.single('econ'), (req, res)=> {
     // to upload data into the server you have to state the data 
     const newBooks = {
         title: req.body.title,
         Author: req.body.Author,
-        image: `http://localhost:4001/books/${req.file.filename}`
+        image: `http://localhost:4001/books/${req.file.filename}`,
+        description: req.body.description
    }
    
-   db.query("INSERT INTO book2 set ? ",[newBooks], (err, result) => {
+   db.query("INSERT INTO economic set ? ",[newBooks], (err, result) => {
        if(err)
        {
            res.status(400).json(err)
@@ -66,7 +65,7 @@ router.post('/',upload.single('program'), (req, res)=> {
 router.get('/:id', (req, res) => {
     const data = req.params.id
 
-    db.query('SELECT  `Author`, `title`, `image` FROM book2 WHERE idbook2 = ?', [data], (err, result) => {
+    db.query('SELECT  `Author`, `title`, `image`, `description` FROM economic WHERE ideconomic = ?', [data], (err, result) => {
         if(err){
             res.status(400).json(err)
         }else 
@@ -79,5 +78,7 @@ router.get('/:id', (req, res) => {
     })
 })
 
-   
-   module.exports = router
+
+
+
+module.exports = router

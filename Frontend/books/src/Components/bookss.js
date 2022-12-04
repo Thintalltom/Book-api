@@ -12,22 +12,22 @@ const Bookss = () => {
         <h5>List of Books</h5>
 
         <Container fluid>
-          <h6 className='pbook'>Programming Books</h6>
+          <h6 className='fst-italic mt-5'>Programming Books</h6>
           <div className='mt-3'>
           <Probooks />
           </div>
           
-          <h6 className='pbook'>Kids Books</h6>
+          <h6 className='fst-italic mt-5'>Kids Books</h6>
           <div className='mt-3'>
           <Kidsbooks />
           </div>
 
-          <h6 className='pbook'>Economics Books</h6>
+          <h6 className='fst-italic mt-5'>Economics Books</h6>
           <div className='mt-3'>
           <Ecobooks />
           </div>
 
-          <h6 className='pbook'>Documentary Books</h6>
+          <h6 className='fst-italic mt-5'>Documentary Books</h6>
           <div className='mt-3'>
           <Docsbooks />
           </div>

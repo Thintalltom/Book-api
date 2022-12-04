@@ -6,10 +6,9 @@ const Docsbooks = () => {
 
 
   const getDocs = async () => {
-    const response = await  fetch('http://localhost:4001/mainbooks/documentary').then((response) =>  response.json())
+    const response = await  fetch('http://localhost:4001/documentary').then((response) =>  response.json())
     setDocbooks(response)
-   
-   
+    console.log(response)
   }
   useEffect(() => {
   getDocs()
@@ -20,9 +19,9 @@ const Docsbooks = () => {
     {docsbooks.map((prog) => (
         <div key ={prog.iddocumentary}>
            <img src={prog.image}  className='proimg'/> 
-           <h6 className='pbook'>{prog.Author}</h6>
-           <p className='pbook'>{prog.title}</p>
-           <Link to={`/Docs/${prog.iddocumentary}`}> <Button>View</Button></Link>
+           <p className='fw-normal'> Title: <span className='fw-light'>{prog.title}</span></p>
+           <h6 className='fst-italic'> Author: {prog.Author}</h6>
+           <Link to={`/Document/${prog.iddocumentary}`}> <Button className='btn-danger'>View</Button></Link>
         </div>
     ))}
     </div>

@@ -15,13 +15,13 @@ const Probooks = () => {
     
   return (
     <Container>
-    <div className='d-flex'>
+    <div className='d-flex gap-4'>
     {progbooks.map((prog) => (
         <div key={prog.idbook2}>
            <img src={prog.image} alt='program'  className='proimg'/> 
-           <h6 className='pbook'>{prog.Author}</h6>
-           <p className='pbook'>{prog.title}</p>
-           <Link to={`/program/${prog.idbook2}`}> <Button>View</Button></Link>
+           <p className='fw-normal'>Title: <span className='fw-light'>{prog.title}</span></p>
+           <h6 className='fst-italic'>Author: {prog.Author}</h6>
+           <Link to={`/program/${prog.idbook2}`}> <Button className='btn-danger'>View</Button></Link>
         </div>
     ))}
     </div>

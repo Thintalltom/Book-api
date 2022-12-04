@@ -8,10 +8,12 @@ const Ecobooks = () => {
 
 
     const getEco = async () => {
-      const response = await  fetch('http://localhost:4001/mainbooks/economics').then((response) =>  response.json())
+      try{
+      const response = await  fetch('http://localhost:4001/economic').then((response) =>  response.json())
       setEcobooks(response)
-   
-     
+      }catch(error){
+        console.log(error)
+      }
     }
     useEffect(() => {
     getEco()
@@ -22,9 +24,9 @@ const Ecobooks = () => {
     {ecobooks.map((prog) => (
         <div key={prog.ideconomic}>
            <img src={prog.image}  className='proimg'/> 
-           <h6 className='pbook'>{prog.Author}</h6>
-           <p className='pbook'>{prog.title}</p>
-           <Link to={`/Document/${prog.ideconomic}`}> <Button>View</Button></Link>
+           <p className='fw-normal'> Title: <span className='fw-light'>{prog.title}</span></p>
+           <h6 className='fst-italic'> Author: {prog.Author}</h6>
+           <Link to={`/Docs/${prog.ideconomic}`}> <Button className='btn-danger'>View</Button></Link>
         </div>
     ))}
     </div>

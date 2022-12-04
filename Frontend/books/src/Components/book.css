@@ -240,7 +240,7 @@
 }
 .pbook{
     font-weight: bold !important;
-    color: blue !important;
+    color: black !important;
 }
 .titleform{
    
@@ -293,6 +293,36 @@ input
 .titleblock:hover{
     border-color: rgba(0, 162, 255, 0.212) !important;
     cursor: pointer !important;
+}
+.econimage{
+    width: 500px;
+}
+.loader-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.834);
+    z-index: 1;
+}
+.spinner{
+    width: 64px;
+    height: 64px;
+    border: 5px solid;
+    border-color: #3d5af1 transparent #3d5af1 transparent;
+    border-radius: 50%;
+    animation:spin-anim 1.2s linear infinite;
+}
+@keyframes spin-anim {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+    
 }
 @media only screen and (max-width: 600px) {
     .mainhead{
@@ -369,5 +399,9 @@ input
         display: flex !important;
         flex-direction: column !important;
         gap: 10px !important;
+    }
+    .econimage{
+        width: 250px !important;
+        margin-left: 50px;
     }
 }

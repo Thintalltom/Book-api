@@ -25,17 +25,17 @@ const [book, setBook] = useState([])
     }
   return (
       <Container>
-        <h5>Your Own Publications</h5>
+        <h5 className='fst-italic mt-5'>Your Own Publications</h5>
         {book == null &&  <h6>No book added yet</h6>}
         <div className='d-flex gap-4'>
         {book.map((book) => (
         <div key={book.idaddbook}>
             <img src={book.image} className='proimg'/>
-            <h6 className='pbook'>{book.Author}</h6>
-            <h6 className='pbook'>{book.title}</h6>
+            <h6 className='fst-italic'>Author: <span>{book.Author}</span></h6>
+            <h6 className='fw-normal'>Title: <span className='fw-light'>{book.title}</span></h6>
             <div className='d-flex gap-4 p-2'>
             <Button className='btn-danger' onClick={() => handleDelete(book.idaddbook)}>Remove</Button>
-            <Link to={`/update/${book.idaddbook}`}> <Button>Edit</Button></Link>
+            <Link to={`/update/${book.idaddbook}`}> <Button className='btn-warning'>Edit</Button></Link>
             </div>
         </div>
          ))}
