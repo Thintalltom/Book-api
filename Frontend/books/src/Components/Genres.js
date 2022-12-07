@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import axios from 'axios'
-import { Container } from 'react-bootstrap'
+import { Container, Button } from 'react-bootstrap'
 import './book.css'
 import {Link} from 'react-router-dom'
 const Genres = () => {
@@ -20,12 +20,11 @@ const getGenres = async () => {
   return (
 <Container fluid>
 <h5 className='pbook'>Genres</h5>
-<div className='d-flex gap-3 mt-3'>
+<div className='d-flex gap-3 mt-3 holder'>
         {genres.map((gen) => {
             return <div key={gen.id}> 
             <img src={gen.Image} className='genimg' />
-            <h6 className='pbook'>{gen.Name}</h6>
-            <Link to={`/inform/${gen.id}`}><button>View</button></Link>
+            <h6 className='fst-italic'>{gen.Name}</h6>
             </div>
 })}
     </div>

@@ -2,20 +2,15 @@ import React, {useState, useEffect} from 'react'
 import { Container, Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import '../book.css'
-const Probooks = () => {
-    const [progbooks, setProgbooks] = useState([])
+const Probooks = ({getProg, progbooks}) => {
 
-    const getProg = async () => {
-      const response = await  fetch('http://localhost:4001/mainbooks').then((response) =>  response.json())
-      setProgbooks(response)
-    }
     useEffect(() => {
     getProg()
     }, [])
     
   return (
     <Container>
-    <div className='d-flex gap-4'>
+    <div className='d-flex gap-4 holder '>
     {progbooks.map((prog) => (
         <div key={prog.idbook2}>
            <img src={prog.image} alt='program'  className='proimg'/> 

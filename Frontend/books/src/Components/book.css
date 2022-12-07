@@ -236,7 +236,8 @@
 }
 .proimg
 {
-    width: 250px !important;
+    width: 200px !important;
+    height: 300px !important;
 }
 .pbook{
     font-weight: bold !important;
@@ -315,6 +316,24 @@ input
     border-radius: 50%;
     animation:spin-anim 1.2s linear infinite;
 }
+
+
+.signBtn:hover{
+background-color: black !important;
+color: white !important;
+}
+
+.loginbtn:hover{
+    background-color: black !important;
+    color: white !important;
+    }
+
+.navbar
+{
+    display:none;
+    visibility: hidden;
+}
+
 @keyframes spin-anim {
     0%{
         transform: rotate(0deg);
@@ -403,5 +422,24 @@ input
     .econimage{
         width: 250px !important;
         margin-left: 50px;
+    }
+    .sidebarlist{
+        display: none;
+        visibility: hidden;
+    }
+    .dataIcon{
+        display: block;
+    }
+    .holder
+    {
+        overflow: scroll !important; 
+    }
+    .sidebarContainer{
+        display: none ;
+    }
+    .navbar
+    {
+        display:block;
+        visibility: visible;
     }
 }

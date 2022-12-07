@@ -40,6 +40,7 @@ app.use('/addbook', require('./api/addbook'))
 app.use('/documentary', require('./api/documentary'))
 app.use('/kidsbook', require('./api/kidsbook'))
 app.use('/economic', require('./api/economic'))
+app.use('/comment', require('./api/comment'))
 app.listen('4001', (req, res) => {
     console.log('Now on port 4001')
 })

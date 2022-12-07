@@ -19,7 +19,7 @@ const Mainhead = () => {
                       <Button className='me-3 signBtn border-none'>Register </Button>
                       </Link>
                        
-                        <Button className='text-dark btn-white border-dark bg-white'>Log in </Button>
+                        <Button className='text-dark btn-white border-dark bg-white loginbtn'>Log in </Button>
                     </div>
             </div>
             <div className='bookCont'>

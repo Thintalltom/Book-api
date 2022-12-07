@@ -3,22 +3,14 @@ import { Container, Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import '../book.css'
 
-const Kidsbooks = () => {
-    const [kidsbooks, setKidbooks] = useState([])
+const Kidsbooks = ({kidsbooks, getKids}) => {
 
-
-    const getKids = async () => {
-      const response = await  fetch('http://localhost:4001/kidsbook').then((response) =>  response.json())
-      setKidbooks(response)
-     
-     
-    }
     useEffect(() => {
     getKids()
     }, [])
   return (
     <Container>
-         <div className='d-flex'>
+         <div className='d-flex gap-3  holder'>
     {kidsbooks.map((prog) => (
         <div key ={prog.idkid}>
            <img src={prog.image} alt='book'  className='proimg'/> 

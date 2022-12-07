@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import {Container, Form, Row, Col, Button} from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import background from '..//Pictures/login.png'
 import Axios from 'axios'
 const Login = () => {
     const navigate = useNavigate()
@@ -36,7 +37,10 @@ const Login = () => {
   return (
     <Container fluid>
     <Row className='ddflex'>
+   <Col>
    
+   <img src={background} className='back' alt='background'/>
+   </Col>
         <Col className='aliC p-5'>
             <h5 className='text-center'>Welcome to BookR</h5>
             <h5 className='text-center'>Login</h5>
@@ -59,7 +63,7 @@ const Login = () => {
             </Form.Group>
 
             <p>If already have an account login</p>
-            <Button onClick={Login}>Login</Button>
+            <Button className='btn-warning' onClick={Login}>Login</Button>
             </Form>
         </Col>
     </Row>

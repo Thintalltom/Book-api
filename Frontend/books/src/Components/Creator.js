@@ -14,12 +14,12 @@ const navigate = useNavigate()
 
 const getTiltle = (e) => {
   setTitle(e.target.value ) 
-  console.log(title)
+
 }
 
 const getAuthor = (e) => {
   setAuthor(e.target.value ) 
-  console.log(author)
+
 }
 
 

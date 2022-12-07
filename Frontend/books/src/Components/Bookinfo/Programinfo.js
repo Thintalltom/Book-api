@@ -3,7 +3,7 @@ import {Container, Button} from 'react-bootstrap'
 import axios from 'axios'
 import '../book.css'
 import {useLocation} from 'react-router-dom'
-const Programinfo = () => {
+const Programinfo = ({visited, setVisited, copy, setCopy}) => {
 const [bookinfo, setBookinfo] = useState([])
 const [loading, setLoading] = useState(false)
 
@@ -32,6 +32,14 @@ const [loading, setLoading] = useState(false)
     }, 2000)
   }, [])
 
+  const Isvisit = (e) => {
+    setVisited(e.target.value)
+    console.log(visited)
+  }
+
+  const Submit = (e) => {
+    setCopy([...copy, {...visited}])
+  }
   
   return (
     <Container fluid>
@@ -54,6 +62,14 @@ const [loading, setLoading] = useState(false)
    </div>
      </Container>
      )}
+     <div className='p-4 mt-2'>
+     <label>Obeservations</label><br />
+    <input onChange={Isvisit} type='text' placeholder='observation'/>
+    <Button>Add Comment</Button>
+     </div>
+      < div>
+      Comment
+      </div>
     </Container>
   )
 }

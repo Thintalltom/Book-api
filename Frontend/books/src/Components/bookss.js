@@ -5,7 +5,7 @@ import Kidsbooks from './listofbooks/Kidsbooks'
 import Ecobooks from './listofbooks/Ecobooks'
 import Docsbooks from './listofbooks/Docsbooks'
 
-const Bookss = () => {
+const Bookss = ({kidsbooks, progbooks, getProg, getKids, ecobooks, getEco, getDocs, visited, setVisited, copy, setCopy, docsbooks}) => {
  
   return (
     <Container fluid>
@@ -14,22 +14,22 @@ const Bookss = () => {
         <Container fluid>
           <h6 className='fst-italic mt-5'>Programming Books</h6>
           <div className='mt-3'>
-          <Probooks />
+          <Probooks getProg={getProg} progbooks={progbooks}  visited={visited} setVisited={setVisited} copy={copy} setCopy={setCopy} />
           </div>
           
           <h6 className='fst-italic mt-5'>Kids Books</h6>
           <div className='mt-3'>
-          <Kidsbooks />
+          <Kidsbooks kidsbooks={kidsbooks} getKids={getKids} />
           </div>
 
           <h6 className='fst-italic mt-5'>Economics Books</h6>
           <div className='mt-3'>
-          <Ecobooks />
+          <Ecobooks ecobooks={ecobooks} getEco={getEco} />
           </div>
 
           <h6 className='fst-italic mt-5'>Documentary Books</h6>
           <div className='mt-3'>
-          <Docsbooks />
+          <Docsbooks docsbooks={docsbooks} getDocs={getDocs}  />
           </div>
 
         </Container>

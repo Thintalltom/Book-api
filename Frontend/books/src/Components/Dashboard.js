@@ -1,80 +1,105 @@
 import React,{useState, useEffect} from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import {Container, Button, Col, Row} from 'react-bootstrap'
+import { useNavigate} from 'react-router-dom'
+import {Container} from 'react-bootstrap'
+import Visited from './Visited'
 import Genres from './Genres'
 import Bookss from './bookss'
 import Pbooks from './Pbooks'
 import './book.css'
-const Dashboard = () => {
+import Navbar from './Body/Navbar'
+
+const Dashboard = ({visited, setVisited, copy, setCopy}) => {
     const navigate = useNavigate()
     const [genre, setGenre] = useState('')
+    const [loading, setLoading] = useState(false)
+   
+  
+
 
     const getGenres = async () => {
       const response = await fetch('http://localhost:4001/maingenres').then
       (response => response.json())
-      setGenre(response)
- 
-      
+      setGenre(response)   
     }
   useEffect(() => {
       getGenres()
        }, [])
+
+       useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+          setLoading(false)
+        }, 2000)
+      }, [])
+
+      const [docsbooks, setDocbooks] = useState([])
+
+      const getDocs = async () => {
+        const response = await  fetch('http://localhost:4001/documentary').then((response) =>  response.json())
+        setDocbooks(response)
+      }
+
+      const [ecobooks, setEcobooks] = useState([])
+
+
+      const getEco = async () => {
+        try{
+        const response = await  fetch('http://localhost:4001/economic').then((response) =>  response.json())
+        setEcobooks(response)
+        }catch(error){
+          console.log(error)
+        }
+      }
+
+
+      const [kidsbooks, setKidbooks] = useState([])
+
+
+      const getKids = async () => {
+        const response = await  fetch('http://localhost:4001/kidsbook').then((response) =>  response.json())
+        setKidbooks(response)
+       
+       
+      }
+
+
+      const [progbooks, setProgbooks] = useState([])
+
+      const getProg = async () => {
+        const response = await  fetch('http://localhost:4001/mainbooks').then((response) =>  response.json())
+        setProgbooks(response)
+      }
+
+ 
+
+
   return (
+  <>
+    {loading ? (
+      <div className='loader-container'>
+        <div className='spinner'></div>
+      </div>
+    ) : (
    < div className='d-flex'>
-     <div className='topbar'>
-       <div className='p-3 bookr shadow-sm'>
-         <h5>Book<span className='text-danger'> R</span></h5>
-       </div>
-       <ul className='gap-5 text-dark'>
-         <li>
-           <a href='#'>
-              Genres
-           </a>
-         </li>
-
-         <li>
-           <a href='#'>
-             Books
-           </a>
-         </li>
-
-
-         <li>
-           <Link to='/creator'>
-           Creator
-           </Link> 
-         </li>
-
-         <li>
-           <a>
-             <Link to='/login'>
-             <Button className='btn-danger'>
-                Log out
-             </Button>
-             </Link>
-           </a>
-         </li>
-       </ul>
-     </div>
-
+    <Visited />
      <Container fluid>
+     <div  className='navbar'>
+     <Navbar />
+     </div>
        <div>
+
         <Genres />
        </div>
-       <div className='mt-3 mb-3'>
-         <input type='text' placeholder='Search for book' className='w-50 ' />
-         <button>Search</button>
-       </div>
        <div>
-      <Bookss />
+      <Bookss  getProg={getProg} progbooks={progbooks} kidsbooks={kidsbooks} getKids={getKids} ecobooks={ecobooks} getEco={getEco} docsbooks={docsbooks} getDocs={getDocs} vsited={visited} setVisited={setVisited} copy={copy} setCopy={setCopy} />
        </div>
        <div>
          <Pbooks />
        </div>
-     </Container>
-     
-
+     </Container> 
    </div>
+    )}
+   </>
   )
 }
 

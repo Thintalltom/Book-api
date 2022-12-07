@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from'axios'
+import Docsbooks from '../listofbooks/Docsbooks'
 const Genreinform = () => {
 
     const showInfo = (e) => {
@@ -7,7 +8,7 @@ const Genreinform = () => {
     }
   return (
     <div>
-<h1>genre info</h1>
+<Docsbooks />
     </div>
   )
 }

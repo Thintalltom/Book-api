@@ -4,7 +4,9 @@ import '../book.css'
 import Bookinfo from '../Bookinfo'
 import Genresinfo from '../Genresinfo'
 
-const Mainhead3 = () => {
+const Mainhead3 = () => {  
+ 
+
   return (
     <Container>
         <div className='popular'>
@@ -27,7 +29,9 @@ const Mainhead3 = () => {
       <Tab eventKey="profile" title="Genres">
         <Genresinfo />
       </Tab>
-    </Tabs>    
+    </Tabs>   
+     
+  
     </Container>
   )
 }

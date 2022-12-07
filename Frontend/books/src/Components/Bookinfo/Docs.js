@@ -2,8 +2,8 @@ import React,{useState, useEffect} from 'react'
 import {useLocation} from 'react-router-dom'
 import axios from 'axios'
 import '../book.css'
-import { Container } from 'react-bootstrap'
-const Docs = () => {
+import { Container, Button } from 'react-bootstrap'
+const Docs = ({visited, setVisited}) => {
   const [bookinfo, setBookinfo] = useState([])
   const [loading, setLoading] = useState(false)
    // by using the readymade uselocation by react router
@@ -28,6 +28,11 @@ const Docs = () => {
         setLoading(false)
       }, 2000)
     }, [])
+
+    const Isvisit = (e) => {
+      setVisited(prevState => ([{visit: !prevState.visit, ...bookinfo}])) 
+      console.log(visited)
+    }
   return (
    <Container fluid>
        {loading ? (
@@ -44,6 +49,7 @@ const Docs = () => {
      <h6 className='fw-bold'>Title: <span className='fw-light'>{book.title}</span></h6>
      <h6 className='fw-bold'>Description: <span className='fw-light'>{book.description}</span></h6>
      <p className='fst-italic'>-Author: {book.Author}</p>
+     <Button onClick={Isvisit} name='true' disabled={visited === true}>Read</Button>
      </div>
    ))}
      </div>
