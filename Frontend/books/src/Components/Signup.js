@@ -7,6 +7,7 @@ import Axios from'axios'
 const Signup = () => {
     const[usernameReg, setusernameReg] = useState('')
     const[passwordReg, setpasswordReg] = useState('')
+    const [loading, setLoading] = useState(false)
   
     const navigate = useNavigate()
     const Register = () => {
@@ -19,9 +20,22 @@ const Signup = () => {
         });
     };
 
+  
+         useEffect(() => {
+          setLoading(true);
+          setTimeout(() => {
+            setLoading(false)
+          }, 2000)
+        }, [])
+
 
   return (
     <Container fluid>
+          {loading ? (
+      <div className='loader-container'>
+        <div className='spinner'></div>
+      </div>
+    ) : (
         <Row className='ddflex'>
             <Col>
             <img src={background} className='back' alt='background'/>
@@ -54,6 +68,8 @@ const Signup = () => {
                 </Form>
             </Col>
         </Row>
+    )
+}
       
     </Container>
   )

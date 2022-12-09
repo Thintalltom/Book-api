@@ -80,4 +80,26 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.get('/search', (req, res) => {
+    const {q, filter} = req.query
+    let query = 'SELECT * FROM kids WHERE title LIKE ?';
+    let params = [`%${q}%`];
+
+    if(filter) {
+        query += 'AND Author = ?';
+        params.push(filter)
+    }
+
+    db.query(query, params, (err, results) => {
+        if(err)
+        {
+            res.status(500).json({
+                error: 'failed to get search'
+            })
+        } else{
+            res.json(results)
+        }
+    })
+})
+
 module.exports = router

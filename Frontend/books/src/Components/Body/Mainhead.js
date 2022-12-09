@@ -8,10 +8,10 @@ const Mainhead = () => {
     <Container className='mainheadCont' >
         <div className='d-flex gap-5 mainhead'>
             <div>
-                    <h1>
+                    <h1 className='change'>
                     A <span>Book</span> <br /> Can Change <br /> Your Life
                     </h1> 
-                    <p>
+                    <p className='fw-light'>
                         Bookr brings the perfection to you through free learning and <br />  reading of books as said book enlighten a person
                     </p>
                     <div>

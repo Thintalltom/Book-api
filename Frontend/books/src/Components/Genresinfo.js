@@ -17,7 +17,7 @@ const Genresinfo = () => {
       }, [])
   return (
     <Container>
-    <h4>Genres</h4>
+
     <div className='d-flex gap-5 side'>
       {genres.map((gen) => (
           <div>

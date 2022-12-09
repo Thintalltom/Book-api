@@ -103,7 +103,7 @@
 .moveup
 {
     margin-top: 200px;
-    background-color: aqua;
+    background-color: rgb(224, 230, 230);
     padding: 40px;
     width: fit-content;
     border-radius: 10px;
@@ -113,12 +113,13 @@
 .bookimge{
     width: 300px !important;
     border-radius: 10px !important;
-    
+    opacity: 0.8;
 }
 .subbtn
 {
     background-color: black;
     color: white;
+    
 }
 .moveup h3{
     font-weight: bold;
@@ -131,7 +132,7 @@
     z-index: 0;
     margin-top: -30px !important;
     position: relative !important;
-    background-color: black !important;
+    background-color: rgba(0, 0, 0, 0.534) !important;
 }
 .navtext{
     font-weight: bold !important;
@@ -218,11 +219,15 @@
 .textxx{
     margin-left: 100px !important;
     margin-top: 10px !important;
+
 }
 .textxx :hover{
-    color: red !important;
+    color: rgba(70, 3, 3, 0.733) !important;
+    padding: 0.5rem 1rem;
     cursor: pointer !important;
     background-color: rgba(255, 255, 255, 0.089) !important;
+    border-left: 1px solid red;
+    transition: all 0.2s ease-out;
    
 }
 .genimg{
@@ -311,8 +316,8 @@ input
 .spinner{
     width: 64px;
     height: 64px;
-    border: 5px solid;
-    border-color: #3d5af1 transparent #3d5af1 transparent;
+    border: 2px solid;
+    border-color: #3d5af1 transparent  #c40808 transparent;
     border-radius: 50%;
     animation:spin-anim 1.2s linear infinite;
 }
@@ -333,6 +338,27 @@ color: white !important;
     display:none;
     visibility: hidden;
 }
+.iconsify
+{
+font-size: 100px !important;
+font-weight: bolder !important;
+}
+.color
+{
+    background-color: rgb(240, 20, 20);
+    background-size: cover;
+}
+.slider
+{
+    border: 1px solid black;
+    justify-content: center;
+    width: fit-content;
+    padding: 5px;
+    margin-left: 10%;
+}
+.textinfo{
+    width: 15px;
+}
 
 @keyframes spin-anim {
     0%{
@@ -343,6 +369,64 @@ color: white !important;
     }
     
 }
+.box{
+    margin-top: 50px;
+}
+.tab{
+    width: fit-content;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.452);
+    color: white;
+    padding: 0.5rem 1rem;
+}
+.tab:hover{
+    background-color: rgba(0, 0, 0, 0.829);
+   cursor: pointer;
+   transition: all 0.3s ease-out;
+}
+.active-tab
+{
+    border: none;
+    background-color: rgb(250, 15, 15);
+}
+.active-tab::after{
+    animation: new 0.5s;
+}
+
+@keyframes new {
+    from{
+        top: 50px;
+        left: 0;
+        right: 0;
+        background-color: grey;
+    }
+
+    to{
+        top: 0px;
+        left: 0;
+        right: 0;
+    }
+    
+}
+.contents{
+    position:relative;
+}
+
+.content{
+    display: none;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.active-content
+{
+    display: block;
+    margin-top: 50px;
+    transition: all 1s ease-in-out;
+    margin-bottom: 30px;
+}
+
+
 @media only screen and (max-width: 600px) {
     .mainhead{
         display: flex;
@@ -441,5 +525,53 @@ color: white !important;
     {
         display:block;
         visibility: visible;
+    }
+    .titleform{
+   
+        width: 80% !important ; 
+        background-size: cover !important ;
+        margin: 1px solid black !important;
+        margin-top: 50px !important;
+        margin-left: 1cm !important;
+        gap: 100px !important;
+    }
+    .ownbook
+    {
+        overflow: scroll !important; 
+    }
+    .serve
+    {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        margin-left: 70px;
+    }
+    .popular{
+        margin-top: 0px;
+    }
+    .mainhead div h1{
+        font-weight: bolder !important;
+        font-size: 32px !important;
+        
+    }
+    .books
+    {
+        width: 200px !important;
+        height: 200px !important;
+    }
+    .changecolor{
+        display: flex;
+        flex-direction: column;
+    }
+    .slider{
+        margin-left: 0%;
+        border: 1px solid black;
+        justify-content: center;
+        font-size: smaller;
+    }
+    .bookimge{
+        width: 200px !important;
+        border-radius: 10px !important;
+        opacity: 0.8;
     }
 }

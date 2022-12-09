@@ -17,7 +17,7 @@ import Visited from './Components/Visited'
 import {BookProvider} from './Components/Context/BookContext'
 import Bookreview from './Components/Bookreview';
 import Navbar from './Components/Body/Navbar';
-import Review from './Components/Review';
+import Topbar from  './Components/Topbar'
 import './App.css';
 
 function App() {
@@ -49,7 +49,7 @@ const [copyInfo, setCopyinfo] = useState([])
        <Route path ='/Visited' element={<Visited visited={visited} setVisited={setVisited} setCopy={setCopyinfo} copy={copyInfo} />}  />
        <Route path ='/bookreview' element={<Bookreview />}  />
        <Route path ='/navbar' element={<Navbar />}  />
-       <Route path ='/review' element={<Review />}  />
+       <Route path ='/topbar' element={<Topbar />}  />
      </Routes>
      </BookProvider>
      </BrowserRouter>

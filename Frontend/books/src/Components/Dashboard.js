@@ -6,7 +6,8 @@ import Genres from './Genres'
 import Bookss from './bookss'
 import Pbooks from './Pbooks'
 import './book.css'
-import Navbar from './Body/Navbar'
+import Topbar from './Topbar'
+import Comment from './Comment'
 
 const Dashboard = ({visited, setVisited, copy, setCopy}) => {
     const navigate = useNavigate()
@@ -83,13 +84,14 @@ const Dashboard = ({visited, setVisited, copy, setCopy}) => {
    < div className='d-flex'>
     <Visited />
      <Container fluid>
-     <div  className='navbar'>
-     <Navbar />
+     <div  className='d-lg-none d-xl-none'>
+     <Topbar />
      </div>
+    
        <div>
-
         <Genres />
        </div>
+       <Comment/>
        <div>
       <Bookss  getProg={getProg} progbooks={progbooks} kidsbooks={kidsbooks} getKids={getKids} ecobooks={ecobooks} getEco={getEco} docsbooks={docsbooks} getDocs={getDocs} vsited={visited} setVisited={setVisited} copy={copy} setCopy={setCopy} />
        </div>

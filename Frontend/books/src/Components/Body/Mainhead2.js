@@ -22,7 +22,7 @@ const Mainhead2 = () => {
             <h1>Book World is Best <br /> 
             Choice For Learners
             </h1>
-            <p>
+            <p className='fw-light'>
             Bookr brings the perfection to you through free learning and <br />  
             reading of books as said book enlighten a person
             </p>

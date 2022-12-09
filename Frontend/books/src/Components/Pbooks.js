@@ -33,10 +33,10 @@ const [book, setBook] = useState([])
             <Link to='/creator'>Add Book</Link>
             </div>
          )  : (
-          <div className='d-flex gap-4 hidden'>
+          <div className='d-flex gap-4 ownbook'>
           {book.map((book) => (
           <div key={book.idaddbook}>
-              <img src={book.image} className='proimg'/>
+              <img src={book.image} alt='book' className='proimg'/>
               <h6 className='fst-italic'>Author: <span>{book.Author}</span></h6>
               <h6 className='fw-normal'>Title: <span className='fw-light'>{book.title}</span></h6>
               <div className='d-flex gap-4 p-2'>

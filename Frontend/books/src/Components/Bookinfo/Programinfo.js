@@ -62,14 +62,7 @@ const [loading, setLoading] = useState(false)
    </div>
      </Container>
      )}
-     <div className='p-4 mt-2'>
-     <label>Obeservations</label><br />
-    <input onChange={Isvisit} type='text' placeholder='observation'/>
-    <Button>Add Comment</Button>
-     </div>
-      < div>
-      Comment
-      </div>
+    
     </Container>
   )
 }

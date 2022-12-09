@@ -4,7 +4,7 @@ const Mainhead5 = () => {
   return (
  <Container> 
      <div className='mt-3'>
-     <h3>Special Offer</h3>
+     <h6>Special Offer</h6>
      </div>
 
 

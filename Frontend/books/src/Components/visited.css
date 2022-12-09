@@ -24,6 +24,7 @@
     background-color: rgba(82, 47, 47, 0.274);
     color: white;
     transition: all 0.5s;
+    border-top: 2px solid rgba(24, 24, 211, 0.61);
 }
 .dataIcon
 {

@@ -79,19 +79,27 @@ router.get('/:id', (req, res) => {
     })
 })
 
-router.post('/', (res, req) => {
-    const value = req.body.Author
 
-    db.query('SELECT * FROM book2 WHERE Author = ? ', value, (err, result ) => {
+router.get('/search', (req, res) => {
+    const {q, filter} = req.query
+    let query = 'SELECT * FROM book2 WHERE title LIKE ?';
+    let params = [`%${q}%`];
+
+    if(filter) {
+        query += 'AND Author = ?';
+        params.push(filter)
+
+    }
+
+    db.query(query, params, (err, results) => {
         if(err)
         {
-            res.status(400).json(err)
-        }else
-        {
-            res.status(200).json({
-                result, 
-                message: 'use gotten succesffuly'
+            res.status(500).json({
+                error: 'failed to get search'
             })
+        } else{
+            res.json(results)
+            console.log(results)
         }
     })
 })

@@ -75,7 +75,7 @@ const Mainhead6 = () => {
         return null
     }
   return (
-    <Container>
+    <Container className='mt-5'>
         <div className='float-right'>
         <Button onClick={prevSlides} className='text-white bg-dark border-white'><BsFillArrowLeftCircleFill /></Button>
                 <Button onClick={nextSlides} className='text-white bg-dark border-white'><BsFillArrowRightCircleFill /></Button>
@@ -83,18 +83,19 @@ const Mainhead6 = () => {
         
         <div className='mt-5'>
         <div>
-          <h5>Book Reviews</h5>
-            <div className='slider'>
+          <h5 className='text-center fw-bold'>Book Reviews</h5>
+            <div className='slider text-center'>
                 {Book.map((book, index) => (
                     <>
                     {index === current && (
-                    <div className='align-item-center'> 
+                    <div className='align-item-center d-flex changecolor'> 
                     <div className='align-item-center justify-content-center d-flex'>
                     <img src={book.image} className='bookimge'/> 
                     </div>
-                   
-                    <p className='text-center wordbk'>{book.text}</p>
-                    <h5> {book.name}</h5>
+                    <div>
+                    <p className='text-center fw-light'>{book.text}</p>
+                    <h5 className='fst-italic fw-light'> --{book.name}</h5>
+                    </div>
                     </div>
                     )}
                     </>
@@ -104,16 +105,16 @@ const Mainhead6 = () => {
         </div>
        
 
-       <div className='d-flex bg-sucess moveup'>
-           <h3>Subscribe for <br /> New Books Update </h3>
-           <div >
-           <input type='text' placeholder='subscribe'/>
-            <button className='subbtn'>Subsrcibe</button>
+       <div className='d-flex  moveup'>
+           <h3 className='fw-light'>Subscribe for <br /> New Books Update </h3>
+           <div className='mx-3'>
+           <input type='text' placeholder='Subscribe...' className='textinfo'/>
+            <button className='subbtn fw-light'>Subscribe</button>
            </div>
        </div>
 
        <div className='darkt'>     
-       <div className='d-flex gap-5 container-fluid  disp'>      
+       <div className='d-flex justify-content-around container-fluid  disp'>      
                 {Footer.map((footer) => (
                     <div className='text-white  textxx'>
                     <h6>{footer.header}</h6>
