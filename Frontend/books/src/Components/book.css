@@ -345,8 +345,10 @@ font-weight: bolder !important;
 }
 .color
 {
-    background-color: rgb(240, 20, 20);
+    background-color: rgb(180, 14, 14);
     background-size: cover;
+    color: white;
+    padding: 10px;
 }
 .slider
 {
@@ -425,7 +427,13 @@ font-weight: bolder !important;
     transition: all 1s ease-in-out;
     margin-bottom: 30px;
 }
-
+.shapebtn
+{
+    width: 90px !important;
+    color: black !important;
+    height: 68px !important;
+    border: 2px solid white;
+}
 
 @media only screen and (max-width: 600px) {
     .mainhead{
@@ -460,8 +468,11 @@ font-weight: bolder !important;
         display: flex;
         flex-direction: column;
     }
-    .moveup h1{
-        font-size: smaller !important;
+    .shapebtn{
+        width: 70px !important;
+    color: black !important;
+    height: 20px !important;
+    border: 2px solid white;
     }
     .world{
         display: flex;
@@ -563,6 +574,11 @@ font-weight: bolder !important;
         display: flex;
         flex-direction: column;
     }
+    .movecenter{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
     .slider{
         margin-left: 0%;
         border: 1px solid black;
@@ -570,8 +586,9 @@ font-weight: bolder !important;
         font-size: smaller;
     }
     .bookimge{
-        width: 200px !important;
-        border-radius: 10px !important;
+        width: 250px !important;
+        border-radius: 0px !important;
         opacity: 0.8;
     }
+
 }

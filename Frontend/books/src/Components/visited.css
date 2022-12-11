@@ -4,6 +4,8 @@
   background-color: rgba(175, 174, 174, 0.514);
   padding: 10px;
   height: 100vh;
+  position: relative;
+
 }
 .sidebarlistcont
 {
@@ -24,7 +26,8 @@
     background-color: rgba(82, 47, 47, 0.274);
     color: white;
     transition: all 0.5s;
-    border-top: 2px solid rgba(24, 24, 211, 0.61);
+    border-top: 2px solid rgba(211, 24, 24, 0.61);
+   
 }
 .dataIcon
 {

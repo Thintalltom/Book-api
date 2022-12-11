@@ -8,12 +8,12 @@ const Mainhead4 = () => {
     
     
   return (
-    <Container className='mt-4 color p-4' fluid> 
-    <h5 className='text-center fw-bold'>Our Services</h5>
-        <div className='d-flex justify-content-around serve'>
+    <Container className='mt-4 color' fluid> 
+    <h5 className='text-center fw-light'>Our Services</h5>
+        <div className='d-flex justify-content-around movecenter'>
             <div>
               <FcConferenceCall className='iconsify'/>
-            <h3 className='fw-bold'>110,121+ </h3>
+            <h3 className='fw-light'>110,121+ </h3>
             <h6 className='fw-light'>Happy Customer</h6>
             </div>
 

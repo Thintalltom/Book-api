@@ -81,23 +81,29 @@ const Dashboard = ({visited, setVisited, copy, setCopy}) => {
         <div className='spinner'></div>
       </div>
     ) : (
-   < div className='d-flex'>
+   <div className='d-flex'>
+
     <Visited />
+
      <Container fluid>
+
      <div  className='d-lg-none d-xl-none'>
      <Topbar />
      </div>
-    
+
        <div>
         <Genres />
        </div>
-       <Comment/>
+
+  
        <div>
       <Bookss  getProg={getProg} progbooks={progbooks} kidsbooks={kidsbooks} getKids={getKids} ecobooks={ecobooks} getEco={getEco} docsbooks={docsbooks} getDocs={getDocs} vsited={visited} setVisited={setVisited} copy={copy} setCopy={setCopy} />
        </div>
+
        <div>
          <Pbooks />
        </div>
+
      </Container> 
    </div>
     )}

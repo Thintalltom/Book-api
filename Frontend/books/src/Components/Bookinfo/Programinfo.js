@@ -49,14 +49,14 @@ const [loading, setLoading] = useState(false)
         </div>
       ) : (
       <Container>
-       <h5 className='text-center fw-bold'>Book Details </h5>
+       <h5 className='text-center mt-5 fw-light'>Book Details </h5>
      <div  className='align-center justify-center '>
      {bookinfo.map((book)=> (
      <div key={book.id}>
      <img src={book.image} className='econimage' alt='bookimage' /> 
-     <h6 className='fw-bold'>Title: <span className='fw-light'>{book.title}</span></h6>
-     <h6 className='fw-bold'>Description: <span className='fw-light'>{book.description}</span></h6>
-     <p className='fst-italic'>-Author: {book.Author}</p>
+     <h6 className='fw-bold mt-3'>Title: <span className='fw-light'>{book.title}</span></h6>
+     <h6 className='fw-light'>Description: <span className='fw-light'>{book.description}</span></h6>
+     <p className='fst-italic'>~Author: {book.Author}</p>
      </div>
    ))}
    </div>
