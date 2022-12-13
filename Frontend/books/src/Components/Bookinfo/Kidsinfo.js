@@ -13,7 +13,7 @@ const Kidsinfo = () => {
      const bookId= location.pathname.split('/')[2]
     const Getbook = async (e) => {
       try {
-         await axios.get('http://localhost:4001/kidsbook/'+bookId).then((response) => { 
+         await axios.get('https://book-app-mysql.herokuapp.com/kidsbook/'+bookId).then((response) => { 
           setBookinfo(response.data.result)}) 
       } catch (error) {
           console.log(error)

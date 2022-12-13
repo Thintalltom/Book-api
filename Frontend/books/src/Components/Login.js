@@ -7,12 +7,14 @@ const Login = () => {
     const navigate = useNavigate()
     const[username, setUsername] = useState('')
     const[password, setPassword] = useState('')
+    
+
 
     const [loginStatus, setLoginstatus] = useState('')
     // making an axios post to the database to post on auth
     Axios.defaults.withCredentials = true;
     const Login = () => {
-        Axios.post('http://localhost:4001/auth', {
+        Axios.post('https://book-app-mysql.herokuapp.com/auth', {
             username: username,
             password: password
         }).then((response) => {
@@ -27,12 +29,14 @@ const Login = () => {
     }
 
     useEffect(() => {
-        Axios.get('http://localhost:4001/auth').then((response) =>{
-            if(response.data.loggedIn == true){
+        Axios.get('https://book-app-mysql.herokuapp.com/auth').then((response) =>{
+            if(response.data.loggedIn === true){
                 setLoginstatus(response.data.user[0].username)
             }
         })
     }, [])
+
+    
     
   return (
     <Container fluid>

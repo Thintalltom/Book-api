@@ -1,5 +1,2 @@
-const addbooks = [
-    
-
-]
+const addbooks = []
 module.exports = addbooks;

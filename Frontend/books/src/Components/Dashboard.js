@@ -36,7 +36,7 @@ const Dashboard = ({visited, setVisited, copy, setCopy}) => {
       const [docsbooks, setDocbooks] = useState([])
 
       const getDocs = async () => {
-        const response = await  fetch('http://localhost:4001/documentary').then((response) =>  response.json())
+        const response = await  fetch('https://book-app-mysql.herokuapp.com/documentary').then((response) =>  response.json())
         setDocbooks(response)
       }
 
@@ -45,7 +45,7 @@ const Dashboard = ({visited, setVisited, copy, setCopy}) => {
 
       const getEco = async () => {
         try{
-        const response = await  fetch('http://localhost:4001/economic').then((response) =>  response.json())
+        const response = await  fetch('https://book-app-mysql.herokuapp.com/economic').then((response) =>  response.json())
         setEcobooks(response)
         }catch(error){
           console.log(error)
@@ -57,7 +57,7 @@ const Dashboard = ({visited, setVisited, copy, setCopy}) => {
 
 
       const getKids = async () => {
-        const response = await  fetch('http://localhost:4001/kidsbook').then((response) =>  response.json())
+        const response = await  fetch('https://book-app-mysql.herokuapp.com/kidsbook').then((response) =>  response.json())
         setKidbooks(response)
        
        
@@ -67,7 +67,7 @@ const Dashboard = ({visited, setVisited, copy, setCopy}) => {
       const [progbooks, setProgbooks] = useState([])
 
       const getProg = async () => {
-        const response = await  fetch('http://localhost:4001/mainbooks').then((response) =>  response.json())
+        const response = await  fetch('https://book-app-mysql.herokuapp.com/mainbooks').then((response) =>  response.json())
         setProgbooks(response)
       }
 
