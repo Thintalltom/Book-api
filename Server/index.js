@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 
 
-app.use('/books', express.static('./upload/images'))
+
 app.use('/genres',express.static('./upload/images') )
 app.use('/addbook',express.static('./upload/images') )
 app.use('/books', require('./api/book'))
