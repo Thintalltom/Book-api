@@ -1,13 +1,14 @@
 const express = require('express')
 const app  = express()
-const cors = require('cors')
+const cors = require('cors')({
+    origin: 'http://localhost:3000'
+})
 const bodyParser = require("body-parser");
 const cookieParser = require('cookie-parser')
 const session = require ('express-session')
 const PORT = 3000;
 
-
-app.use(cors())
+app.use(cors)
 
 app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: true}))

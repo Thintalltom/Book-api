@@ -15,7 +15,7 @@ const Signup = () => {
             username: usernameReg,
             password: passwordReg
         }).then((response) => {
-          console.log(response)
+          console.log(response.json())
           navigate('/login')
         });
     };
