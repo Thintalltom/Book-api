@@ -12,7 +12,7 @@ const Docs = ({visited, setVisited}) => {
      const bookId= location.pathname.split('/')[2]
     const Getbook = async (e) => {
       try {
-       await axios.get('https://book-app-mysql.herokuapp.com/economic/'+bookId).then((response) => setBookinfo(response.data.result)) 
+       await axios.get('http://localhost:4001/economic/'+bookId).then((response) => setBookinfo(response.data.result)) 
       } catch (error) {
           console.log(error)
       }

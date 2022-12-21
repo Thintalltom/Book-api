@@ -4,7 +4,7 @@ import Docsbooks from '../listofbooks/Docsbooks'
 const Genreinform = () => {
 
     const showInfo = (e) => {
-        axios.get('https://book-app-mysql.herokuapp.com/maingenres/')
+        axios.get('http://localhost:4001/maingenres/')
     }
   return (
     <div>

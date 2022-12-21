@@ -11,11 +11,12 @@ const Signup = () => {
   
     const navigate = useNavigate()
     const Register = () => {
-        Axios.post('https://book-app-mysql.herokuapp.com/login', {
+        Axios.post('http://localhost:4001/login', {
             username: usernameReg,
             password: passwordReg
         }).then((response) => {
-          console.log(response.json())
+          
+          console.log(response)
           navigate('/login')
         });
     };

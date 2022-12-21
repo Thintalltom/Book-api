@@ -13,7 +13,7 @@ const [loading, setLoading] = useState(false)
    const bookId= location.pathname.split('/')[2]
   const Getbook = async (e) => {
     try {
-       await axios.get('https://book-app-mysql.herokuapp.com/mainbooks/'+bookId).then((response) => { 
+       await axios.get('http://localhost:4001/mainbooks/'+bookId).then((response) => { 
         setBookinfo(response.data.result) 
         console.log(response.data.result)
       }) 
