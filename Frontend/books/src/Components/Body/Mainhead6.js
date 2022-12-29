@@ -68,7 +68,7 @@ const Mainhead6 = () => {
         return null
     }
   return (
-    <Container className='mt-5'>
+    <Container fluid className='mt-5'>
         <div className='float-right'>
         <Button onClick={prevSlides} className='text-white bg-dark border-white'><BsFillArrowLeftCircleFill /></Button>
                 <Button onClick={nextSlides} className='text-white bg-dark border-white'><BsFillArrowRightCircleFill /></Button>

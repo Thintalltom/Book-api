@@ -14,7 +14,7 @@ const Login = () => {
     // making an axios post to the database to post on auth
     Axios.defaults.withCredentials = true;
     const Login = () => {
-        Axios.post('http://localhost:4001/auth', {
+        Axios.post('https://book-backend-production.up.railway.app/auth', {
             username: username,
             password: password
         }).then((response) => {
@@ -29,7 +29,7 @@ const Login = () => {
     }
 
     useEffect(() => {
-        Axios.get('http://localhost:4001/auth').then((response) =>{
+        Axios.get('https://book-backend-production.up.railway.app/auth').then((response) =>{
             if(response.data.loggedIn === true){
                 setLoginstatus(response.data.user[0].username)
             }

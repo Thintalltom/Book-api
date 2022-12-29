@@ -20,15 +20,14 @@ const [bookData, setBookdata] = useState([{}])
   }, [])
   
   return (
-    
-   <Container fluid>
+    <> 
    <Navbar />
     <Mainhead />
     <Mainhead2 />
     <Mainhead3 />
     <Mainhead4 />
     <Mainhead6 slides={slides}/>
-   </Container>
+    </>
     
   )
 }
